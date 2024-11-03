@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Great Number Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+
+        <h1>Welcome to the Great Number Game!</h1>
+        <p>I am thinking of a number between 1 and 100</p>
+        <p>Take a guess!</p>
+        {% if session['guessed_number'] == None %}
+        <form action="/guess" method="post">
+            <input type="number" name="guess" class="guess_input" max="100" min="0" autofocus>
+            <button class="button" >Submit</button>
+        </form>
+        {% else %}
+
+            {% if session['random_num'] > session['guessed_number'] %}
+            <div class="too-low">Too low!</div>
+            <form action="/guess" method="post">
+                <input type="number" name="guess" class="guess_input" max="100" min="0" autofocus>
+                <button class="button" >Submit</button>
+            </form>
+            {% endif %}
+
+            {% if session['guessed_number'] > session['random_num'] %}
+            <div class="too-high">Too high!</div>
+            <form action="/guess" method="post">
+                <input type="number" name="guess" class="guess_input" max="100" min="0" autofocus>
+                <button class="button" >Submit</button>
+            </form>
+            {% endif %}
+
+            {% if session['guessed_number'] == session['random_num'] %}
+            <div class="sucess">guess was the number!</div>
+            {% endif %}
+
+        {% endif %}
+        <form action="/destroy_session" method="post">
+            <button class="button-restart" >Restart Game!</button>
+        </form>
+    </div>
+</body>
+</html>

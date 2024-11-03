@@ -1,0 +1,107 @@
+
+
+
+* {
+    font-family: sans-serif;
+}
+
+.container {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container h1 {
+    color: darkgreen;
+}
+
+.container p {
+    font-size: 20px;
+    color: darkblue;
+}
+
+
+.guess_input {
+    width: 100px;
+    height: 25px;
+    text-align: center;
+    font-size: 20px;
+    border: 2px solid black;
+    padding: 0px 0px 0px 13px;
+    margin: 20px 0px 0px 0px;
+}
+
+.button {
+    margin: 15px;
+    height: 25px;
+    width: 70px;
+    border: 2px solid black;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: beige;
+}
+
+.button:active {
+    background-color: burlywood;
+}
+
+.button-restart {
+    margin: 15px;
+    height: 25px;
+    width: 120px;
+    border: 2px solid black;
+}
+
+.button-restart:hover {
+    cursor: pointer;
+    background-color: beige;
+}
+
+.button-restart:active {
+    background-color: burlywood;
+}
+
+.too-low {
+    width: 250px;
+    height: 250px;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 25px;
+    border: 2px solid black;
+}
+
+
+.too-high {
+    width: 250px;
+    height: 250px;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 25px;
+    border: 2px solid black;
+
+}
+
+.sucess {
+    width: 250px;
+    height: 250px;
+    background-color: green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    border: 2px solid black;
+
+}
